@@ -1,0 +1,76 @@
+/*--------Product Table------------*/
+insert into product
+values(1,'Iphone 14', 'SP', 849, 6.1, 'A15 Bionic chip', 6, 4323, 'Red');
+insert into product
+values(2,'Iphone 14 plus', 'SP', 1099, 6.7, 'A15 Bionic chip', 6, 4323, 'Black');
+insert into product
+values(3,'Ipad Pro 11inch', 'TB', 839, 11, 'Apple M2 chip', 16, 7538, 'Blue');
+insert into product
+values(4,'Ipad Air 5th gen', 'TB', 669, 10.9, 'Apple M1 chip', 8, 8827, 'Space Grey');
+insert into product(product_number, product_name, product_type, unit_price, colour)
+values(5,'Iphone USB Cable', 'AC', 20,'White');
+/*--------Customer Table------------*/
+insert into customer
+values (1, 'Albert Einstein', '8 Manchester Road',
+to_date('17-JUL-2022','DD-MON-YYYY'));
+insert into customer
+values (2, 'Tyler the Creator', '36 Chester Road',
+to_date('28-JUL-2022','DD-MON-YYYY'));
+insert into customer
+values (3, 'Travis Scott', '71 School Lane',
+to_date('03-SEP-2022','DD-MON-YYYY'));
+insert into customer
+values (4, 'Elon Musk', '30 Church Street',
+to_date('07-OCT-2022','DD-MON-YYYY'));
+insert into customer
+values (5, 'Kanye West', '64 South Street',
+to_date('17-OCT-2022','DD-MON-YYYY'));
+/*--------Salary Grade Table------------*/
+insert into SalGrade
+values (1, 700, 1200);
+insert into SalGrade
+values (2, 1201, 1400);
+insert into SalGrade
+values (3, 1401, 2000);
+insert into SalGrade
+values (4, 2001, 3000);
+insert into SalGrade
+values (5, 3001, 9999);
+/*--------Staff Table------------*/
+insert into staff
+values (1, 'Oliver','Manager', to_date('20-JUN-2022','DD-MON-YYYY'),
+4166, 1700.2, 5866.2, 5);
+insert into staff
+values (2, 'Jess','Manager', to_date('21-JUN-2022','DD-MON-YYYY'),
+3200, 1482.21, 4682.21, 5);
+insert into staff
+values (3,'Emma','Sales Associate', to_date('04-JUL-2022','DD-MON-YYYY'),
+1780, 807.7, 2587.7, 4);
+insert into staff
+values (4,'Liam','Sales Associate', to_date('26-AUG-2022','DD-MON-YYYY'),
+950, 350.2, 1300.20, 2);
+insert into staff
+values (5, 'Noah','Sales Associate', to_date('01-DEC-2022','DD-MON-YYYY'),
+1899, 0, 1899, 3);
+/*--------Purchase Table------------*/
+insert into purchase
+values(1, 2, 2, 2198);
+insert into purchase
+values(2, 1, 2, 1698);
+insert into purchase
+values(3, 4, 3, 2007);
+insert into purchase
+values(4, 3, 1,839);
+insert into purchase
+values(5, 4, 1, 669);
+/*--------Sales Table------------*/
+insert into sales
+values (1, to_date('17-JUL-2022','DD-MON-YYYY'), 1, 2, 1, 2198);
+insert into sales
+values (2, to_date('28-JUL-2022','DD-MON-YYYY'), 2, 3, 2, 1698);
+insert into sales
+values (3, to_date('02-SEP-2022','DD-MON-YYYY'), 1, 4, 3, 2007);
+insert into sales
+values (4, to_date('03-SEP-2022','DD-MON-YYYY'), 3, 4, 4, 837);
+insert into sales
+values (5, to_date('07-OCT-2022','DD-MON-YYYY'), 4, 4, 5, 669);
