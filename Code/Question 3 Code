@@ -1,0 +1,57 @@
+create table product(/*Product info, i.e CPU speeds, colour etc.*/
+Product_Number integer,
+Product_Name varchar(255),
+Product_Type varchar(2),
+Unit_Price number(10,2),
+Screen_Size number(10,2),
+CPU varchar(255),
+RAM integer,
+Battery integer,
+Colour varchar(255),
+Primary Key(Product_number)
+);
+create table customer(/*Customer information*/
+Customer_Number integer,
+Customer_Name varchar(255),
+Address varchar(255),
+JoinDate Date,/*date customer made first purchase /when account was made*/
+Primary Key (Customer_number)
+);
+Create Table SalGrade(
+Grade Integer,
+Lowsal number(10,2),
+HighSal number(10,2),
+Primary Key(Grade)
+);
+Create table Staff(/* Employee information table */
+Sale_ID integer,
+Sales_Person varchar(255),
+Position varchar(255),
+Hiredate Date,
+FixedIncome number(10,2),/*fixed monthly pay before commission is added*/
+Commission number(10,2),
+TotalIncome number(10,2),/*total monthly pay after commission is added*/
+Grade integer,
+Primary key(Sale_ID),
+Foreign Key(Grade) references SalGrade(Grade)
+);
+Create table Purchase(/*Info on the sales i.e how many products were sold*/
+Sale_Number integer,
+Product_Number integer,
+Quantity integer,
+Line_Total number(10,2),
+Primary KEY (Sale_number),
+foreign key (product_number) references product(product_number)
+);
+create table sales(/*Main sales table*/
+Report_ID integer,
+Sale_Date date,
+customer_number integer,
+Sale_ID integer,
+Sale_Number integer,
+Total number(10,2),
+Primary Key (Report_ID),
+foreign key (customer_number) references customer(customer_number),
+foreign key (sale_id) references staff(sale_id),
+foreign key (Sale_number) references purchase(sale_number)
+);
